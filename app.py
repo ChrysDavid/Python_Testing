@@ -30,7 +30,7 @@ def showSummary():
         club = [club for club in clubs if club['email'] == request.form['email']][0]
         return render_template('welcome.html',club=club,competitions=competitions)
     except:
-        flash('Invalid email')
+        flash('Email non trouvé, veuillez réessayer.')
         return redirect(url_for('index'))
 
 
