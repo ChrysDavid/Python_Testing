@@ -1,12 +1,17 @@
 
-body {
+.acceuil {
     text-align: center;
-    padding-top: 200px;
+    height: 100vh;
 }
 
 p {
     font-size: x-large;
 }
+
+p.message-erreur {
+    color: red;
+}
+
 h1 {
     margin-bottom: 20px;
     color: green;
@@ -22,4 +27,88 @@ form {
     background-color: #f9f9f9; /* Couleur de fond */
     border-radius: 8px; /* Coins arrondis */
     box-shadow: 0 2px 8px rgb(0 0 0 / 26%); /* Ombre légère */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* .container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+} */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logout-button {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.logout-button:hover {
+    background-color: #e60000;
+}
+
+.messages {
+    background-color: #ffe6e6;
+    color: #cc0000;
+    border-left: 4px solid #ff4d4d;
+    padding: 10px;
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.points {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.competitions {
+    list-style-type: none;
+    padding: 0;
+}
+
+.competition-item {
+    margin-bottom: 20px;
+}
+
+.book-button {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.book-button:hover {
+    background-color: #0056b3;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #cccccc;
+    margin: 20px 0;
 }

@@ -6,7 +6,7 @@
     <title>GUDLFT Registration</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
+<body class="acceuil">
     <div class="container">
         <h1>Welcome to the GUDLFT Registration Portal!</h1>
         <p><br>Please enter your secretary email to continue:</p>
@@ -17,7 +17,7 @@
         </form>
         {% with message = get_flashed_messages() %}
             {% if message %}
-                <p>{{ message }}</p>
+                <p class="message-erreur">{{ message }}</p>
             {% endif %}
         {% endwith %}
     </div>
