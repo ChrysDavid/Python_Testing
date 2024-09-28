@@ -1,10 +1,15 @@
 
 body {
     text-align: center;
+    padding-top: 200px;
+}
+
+p {
+    font-size: x-large;
 }
 h1 {
     margin-bottom: 20px;
-    color: blue;
+    color: green;
 }
 form {
     display: inline-block;
@@ -16,5 +21,5 @@ form {
     padding: 20px; /* Espacement interne */
     background-color: #f9f9f9; /* Couleur de fond */
     border-radius: 8px; /* Coins arrondis */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    box-shadow: 0 2px 8px rgb(0 0 0 / 26%); /* Ombre légère */
 }

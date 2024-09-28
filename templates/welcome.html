@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Summary | GUDLFT Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
         <h2>Welcome, {{club['email']}} </h2><a href="{{url_for('logout')}}">Logout</a>
@@ -15,7 +16,7 @@
         {% endfor %}
        </ul>
     {% endif%}
-    Points available: {{club['points']}}
+    <p>Points available: {{club['points']}}</p>
     <h3>Competitions:</h3>
     <ul>
         {% for comp in competitions%}
