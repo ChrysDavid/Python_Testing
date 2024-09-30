@@ -55,8 +55,12 @@ def purchasePlaces():
     except:
         flash('Erreur!!!! Vous devez entrer un entier')
         return render_template('welcome.html', club=club, competitions=competitions)
+    
+    if placesRequired <= 0 :
+        flash('Vous avez entrer un nombre negatif.')
+        return render_template('welcome.html', club=club, competitions=competitions)
 
-    if placesRequired > 12:
+    if placesRequired > 12 :
         flash('You cannot book more than 12 places.')
         return render_template('welcome.html', club=club, competitions=competitions)
     
