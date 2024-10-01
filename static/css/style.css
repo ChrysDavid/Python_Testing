@@ -30,6 +30,7 @@ p {
 
 p.message-erreur {
     color: red;
+    font-size: small;
 }
 
 h1 {
