@@ -82,4 +82,4 @@ def logout():
     return redirect(url_for('index'))
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=5080, debug=True)
+    app.run()
