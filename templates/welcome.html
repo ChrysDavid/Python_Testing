@@ -23,6 +23,7 @@
         {% endwith %}
 
         <p class="points">Points available: {{club['points']}}</p>
+        <!-- {% if competitions %} -->
         <h3>Competitions:</h3>
         <ul class="competitions">
             {% for comp in competitions %}
@@ -39,6 +40,7 @@
                 {% endif %}
             {% endfor %}
         </ul>
+        <!-- {% endif %} -->
     </div>
 </body>
 </html>
