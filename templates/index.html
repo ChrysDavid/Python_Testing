@@ -23,5 +23,31 @@
             {% endfor %}
         {% endwith %}
     </div>
+    <div style="padding-left: 200px;"></div>
+    <div class="container">
+    <h2>List of Clubs and Points</h2>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Club Name</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if clubs %}
+                    {% for club in clubs %}
+                    <tr>
+                        <td>{{ club.name }}</td>
+                        <td>{{ club.points }}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="2">Aucun club trouvé.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+</div>
 </body>
 </html>
