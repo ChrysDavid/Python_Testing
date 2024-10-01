@@ -12,7 +12,6 @@
             <h2>Welcome, {{club['email']}} </h2>
             <a href="{{url_for('logout')}}" class="logout-button">Logout</a>
         </header>
-
         {% with messages = get_flashed_messages()%}
         {% if messages %}
             <ul class="messages">
@@ -24,19 +23,20 @@
         {% endwith %}
 
         <p class="points">Points available: {{club['points']}}</p>
-
         <h3>Competitions:</h3>
         <ul class="competitions">
             {% for comp in competitions %}
-            <li class="competition-item">
-                <strong>{{comp['name']}}</strong><br />
-                Date: {{comp['date']}}<br />
-                Number of Places: {{comp['numberOfPlaces']}}
-                {% if comp['numberOfPlaces']|int > 0 %}
-                    <a href="{{ url_for('book', competition=comp['name'], club=club['name']) }}" class="book-button">Book Places</a>
+                {% if comp['date'] > current_date %}
+                    <li class="competition-item">
+                        <strong>{{ comp['name'] }}</strong><br />
+                        Date: {{ comp['date'].strftime('%Y-%m-%d %H:%M:%S') }}<br />
+                        Nombre de places: {{ comp['numberOfPlaces'] }}
+                        {% if comp['numberOfPlaces']|int > 0 %}
+                            <a href="{{ url_for('book', competition=comp['name'], club=club['name']) }}" class="book-button">Réserver des places</a>
+                        {% endif %}
+                    </li>
+                    <hr />
                 {% endif %}
-            </li>
-            <hr />
             {% endfor %}
         </ul>
     </div>
