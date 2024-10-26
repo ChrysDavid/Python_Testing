@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary | GUDLFT Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h2>Welcome, {{club['email']}} </h2>
+            <a href="{{url_for('logout')}}" class="logout-button">Logout</a>
+        </header>
+        {% with messages = get_flashed_messages()%}
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li>{{message}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+
+        <p class="points">Points available: {{club['points']}}</p>
+        <!-- {% if competitions %} -->
+        <h3>Competitions:</h3>
+        <ul class="competitions">
+            {% for comp in competitions %}
+                {% if comp['date'] > current_date %}
+                    <li class="competition-item">
+                        <strong>{{ comp['name'] }}</strong><br />
+                        Date: {{ comp['date'].strftime('%Y-%m-%d %H:%M:%S') }}<br />
+                        Nombre de places: {{ comp['numberOfPlaces'] }}
+                        {% if comp['numberOfPlaces']|int > 0 %}
+                            <a href="{{ url_for('book', competition=comp['name'], club=club['name']) }}" class="book-button">Réserver des places</a>
+                        {% endif %}
+                    </li>
+                    <hr />
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <!-- {% endif %} -->
+    </div>
+</body>
+</html>

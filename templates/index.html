@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUDLFT Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the GUDLFT Registration Portal!</h1>
+        <p><br>Please enter your secretary email to continue:</p>
+        <form action="showSummary" method="post">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id=""/>
+            <button type="submit">Enter</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% for message in messages %}
+                {% if message %}
+                    <p class="message-erreur">{{ message }}</p>
+                {% endif %}
+            {% endfor %}
+        {% endwith %}
+    </div>
+    <div style="padding-left: 200px;"></div>
+    <div class="container">
+    <h2>List of Clubs and Points</h2>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Club Name</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if clubs %}
+                    {% for club in clubs %}
+                    <tr>
+                        <td>{{ club.name }}</td>
+                        <td>{{ club.points }}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="2">Aucun club trouvé.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+</div>
+</body>
+</html>
